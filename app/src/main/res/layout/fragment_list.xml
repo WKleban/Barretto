@@ -6,30 +6,53 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".ListFragment">
 
-    <TextView
-        android:id="@+id/test_text"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_list"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:textSize="48sp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="cursive"
-        android:text="Barretto notes"
-        android:textColor="@color/green_A700"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/title_text_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="cursive"
+        android:text="Barretto notes"
+        android:textColor="@color/green_A700"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_list" />
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/test_text" />
+        app:layout_constraintTop_toBottomOf="@+id/title_text_list"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/item_singlenote_layout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--        tools:listitem="@android:layout/listitem"-->

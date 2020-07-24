@@ -1,8 +1,6 @@
 package pl.wotu.barretto;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -23,6 +21,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import pl.wotu.barretto.util.MyPreferences;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -100,30 +100,30 @@ public class PinFragment extends Fragment implements View.OnClickListener, View.
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        SharedPreferences preferences = this.getActivity().getSharedPreferences("BarrettoPreferences", Context.MODE_PRIVATE);
-        String emailPref = preferences.getString("email", "");
-        boolean checkPinPref = preferences.getBoolean("checkPin", true);
-        boolean pinIsSetPref = preferences.getBoolean("isPinSet", false);
-        String userPin = preferences.getString("pin","");
+
+        navController = Navigation.findNavController(view);
+
+//        String emailPref = SomeStaticMethods.getString(requireContext(),"email","");
+        boolean checkPinPref = MyPreferences.getBoolean(requireContext(),"checkPin", true);
+        boolean pinIsSetPref = MyPreferences.getBoolean(requireContext(),"isPinSet", false);
+        String userPin = MyPreferences.getString(requireContext(),"pin","");
 
         if (checkPinPref){
             if (pinIsSetPref){
                 //TODO Sprawdź hasło
-
-
+                initInterfaceElements(view,userPin.length());
+                changeButtonsOrder();
             }else {
                 //TODO Utworz hasło
                 navController.navigate(R.id.action_pinFragment_to_initialSettingsFragment);
             }
-
         }else {
             // Nie ma sprawdzania pinu, poprostu przenieś
             navController.navigate(R.id.action_pinFragment_to_listFragment);
         }
+    }
 
-
-        navController = Navigation.findNavController(view);
-
+    private void initInterfaceElements(@NonNull View view,int numberOfPinDigits) {
         triesLeft = view.findViewById(R.id.pinfragment_tries_left_tv);
 
         pinDot[0] = view.findViewById(R.id.pin_dot_1);
@@ -152,6 +152,7 @@ public class PinFragment extends Fragment implements View.OnClickListener, View.
         pinButtonBackspace = view.findViewById(R.id.pin_button_backspace);
         pinButtonReorder = view.findViewById(R.id.pin_button_reorder);
 
+
         pinButton0.setOnClickListener(this);
         pinButton1.setOnClickListener(this);
         pinButton2.setOnClickListener(this);
@@ -166,7 +167,7 @@ public class PinFragment extends Fragment implements View.OnClickListener, View.
         pinButtonReorder.setOnClickListener(this);
         pinButtonReorder.setOnLongClickListener(this);
 
-        for(int i=0;i<12;i++){
+        for(int i=0;i<numberOfPinDigits;i++){
             if (i< userPin.length()){
                 pinDot[i].setVisibility(View.VISIBLE);
             }else {
@@ -177,7 +178,6 @@ public class PinFragment extends Fragment implements View.OnClickListener, View.
         for(int i=0;i<10;i++){
             pinNumbers.add(i);
         }
-        changeButtonsOrder();
     }
 
     @SuppressLint("SetTextI18n")
