@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Barretto</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--Fingerprint-->
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_fingerprint">Zaloguj się odciskiem palca</string>
+    <string name="desc_fingerprint">Przyłóż palec do skanera aby sprawdzić tożsamość</string>
+    <string name="note">(Twoje urządzenie musi mieć zarejestrowany przynajmniej jeden odcisk palca)</string>
+    <string name="title_activity_home">Fingerprint</string>
+    <string name="activity_home_desc">Zalogowano przy użyciu odcisku palca</string>
+    <string name="activity_home_note">Wyloz, wloz. Close and re-open the app to see the fingerprint auth screen again</string>
+
+</resources>

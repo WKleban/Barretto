@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="pl.wotu.barretto.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_pinFragment"
+            app:destination="@id/pinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="pl.wotu.barretto.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_fingerFragment"
+            app:destination="@id/fingerFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_initialSettingsFragment"
+            app:destination="@id/initialSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fingerFragment"
+        android:name="pl.wotu.barretto.FingerFragment"
+        android:label="fragment_finger"
+        tools:layout="@layout/fragment_finger" >
+        <action
+            android:id="@+id/action_fingerFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_fingerFragment_to_pinFragment"
+            app:destination="@id/pinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="pl.wotu.barretto.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/pinFragment"
+        android:name="pl.wotu.barretto.PinFragment"
+        android:label="fragment_pin"
+        tools:layout="@layout/fragment_pin" >
+        <action
+            android:id="@+id/action_pinFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/initialSettingsFragment"
+        android:name="pl.wotu.barretto.InitialSettingsFragment"
+        android:label="fragment_initial_settings"
+        tools:layout="@layout/fragment_initial_settings" >
+        <action
+            android:id="@+id/action_initialSettingsFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+</navigation>
