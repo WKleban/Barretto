@@ -12,10 +12,14 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/registerFragment"
+            app:popUpToInclusive="false" />
         <action
-            android:id="@+id/action_loginFragment_to_pinFragment"
-            app:destination="@id/pinFragment" />
+            android:id="@+id/action_loginFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_fingerFragment"
+            app:destination="@id/fingerFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -26,8 +30,8 @@
             android:id="@+id/action_registerFragment_to_fingerFragment"
             app:destination="@id/fingerFragment" />
         <action
-            android:id="@+id/action_registerFragment_to_initialSettingsFragment"
-            app:destination="@id/initialSettingsFragment" />
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/fingerFragment"
@@ -35,17 +39,24 @@
         android:label="fragment_finger"
         tools:layout="@layout/fragment_finger" >
         <action
-            android:id="@+id/action_fingerFragment_to_listFragment"
-            app:destination="@id/listFragment" />
-        <action
             android:id="@+id/action_fingerFragment_to_pinFragment"
             app:destination="@id/pinFragment" />
+        <action
+            android:id="@+id/action_fingerFragment_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"
         android:name="pl.wotu.barretto.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_initialSettingsFragment"
+            app:destination="@id/initialSettingsFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_pinFragment"
+            app:destination="@id/pinFragment" />
+    </fragment>
     <fragment
         android:id="@+id/pinFragment"
         android:name="pl.wotu.barretto.PinFragment"
@@ -54,6 +65,9 @@
         <action
             android:id="@+id/action_pinFragment_to_listFragment"
             app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_pinFragment_to_initialSettingsFragment"
+            app:destination="@id/initialSettingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/initialSettingsFragment"

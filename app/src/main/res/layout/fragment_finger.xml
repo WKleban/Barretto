@@ -9,7 +9,7 @@
     tools:context=".FingerFragment">
 
     <ImageView
-        android:id="@+id/finger_icon"
+        android:id="@+id/icon_finger"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginTop="64dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/finger_tv"
+        android:id="@+id/tv_finger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -32,10 +32,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/finger_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/icon_finger" />
 
     <TextView
-        android:id="@+id/finger_desc_tv"
+        android:id="@+id/desc_tv_finger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -51,10 +51,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/finger_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_finger" />
 
     <TextView
-        android:id="@+id/finger_error_tv"
+        android:id="@+id/error_tv_finger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -68,11 +68,11 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/finger_desc_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/desc_tv_finger" />
 
 
     <TextView
-        android:id="@+id/finger_info_tv"
+        android:id="@+id/info_tv_finger"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -86,6 +86,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/pin_button_finger"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_green"
+        android:text="Zaloguj się używając PINu"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/info_tv_finger"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

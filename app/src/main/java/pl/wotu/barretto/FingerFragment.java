@@ -1,8 +1,10 @@
 package pl.wotu.barretto;
 
+import android.hardware.biometrics.BiometricManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class FingerFragment extends Fragment {
+
+    private NavController navController;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,5 +64,12 @@ public class FingerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_finger, container, false);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        //TODO tu się na razie nic nie dzieje. Od razu przenosi do listy
+        navController.navigate(R.id.action_fingerFragment_to_listFragment);
     }
 }
