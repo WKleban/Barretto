@@ -137,17 +137,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.button_login:
 //                Toast.makeText(getContext(), "Kliknięto: R.id.login_button", Toast.LENGTH_LONG).show();
-                String loginEmail = loginET.getText().toString();
-                String loginPassword = passwordET.getText().toString();
+                String email = loginET.getText().toString();
+                String password = passwordET.getText().toString();
 
-                if (!TextUtils.isEmpty(loginEmail) && !TextUtils.isEmpty(loginPassword)) {
+                if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
                     progressBar.setVisibility(View.VISIBLE);
 
-                    mAuth.signInWithEmailAndPassword(loginEmail, loginPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-//                                sendToMain();
                                 navController.navigate(R.id.action_loginFragment_to_listFragment);
                             } else {
                                 String errorMessage = task.getException().getMessage();

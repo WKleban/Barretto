@@ -16,6 +16,8 @@
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_loginFragment_to_listFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/loginFragment"
             app:destination="@id/listFragment" />
         <action
             android:id="@+id/action_loginFragment_to_fingerFragment"
@@ -47,9 +49,9 @@
     </fragment>
     <fragment
         android:id="@+id/listFragment"
-        android:name="pl.wotu.barretto.ListFragment"
+        android:name="pl.wotu.barretto.MainFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
+        tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_listFragment_to_initialSettingsFragment"
             app:destination="@id/initialSettingsFragment" />

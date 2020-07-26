@@ -12,5 +12,21 @@
     <string name="title_activity_home">Fingerprint</string>
     <string name="activity_home_desc">Zalogowano przy użyciu odcisku palca</string>
     <string name="activity_home_note">Wyloz, wloz. Close and re-open the app to see the fingerprint auth screen again</string>
+    <string name="account">Użytkownik</string>
+    <string name="notes">Notatki</string>
+    <string name="settings">Ustawienia</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="title_activity_nav_test">NavTestActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 
 </resources>
