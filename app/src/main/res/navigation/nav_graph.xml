@@ -58,6 +58,12 @@
         <action
             android:id="@+id/action_listFragment_to_pinFragment"
             app:destination="@id/pinFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_noteDetailsFragment"
+            app:destination="@id/noteDetailsFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/pinFragment"
@@ -80,4 +86,9 @@
             android:id="@+id/action_initialSettingsFragment_to_listFragment"
             app:destination="@id/listFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/noteDetailsFragment"
+        android:name="pl.wotu.barretto.NoteDetailsFragment"
+        android:label="fragment_note_details"
+        tools:layout="@layout/fragment_note_details" />
 </navigation>
